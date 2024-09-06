@@ -1,0 +1,1 @@
+python train_stereo.py --train_datasets constructionnew --name xx --num_steps 20000 --lr 0.00001 --image_size 640 960 --restore_ckpt models/raftstereo-sceneflow.pth --batch_size 4 --train_iters 20 --valid_iters 32 --spatial_scale -0.2 0.4 --saturation_range 0 1.4 --n_downsample 2 --mix_precision
