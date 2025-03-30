@@ -1,0 +1,300 @@
+<robot
+  name="excavator_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.89793 0.0045944 0.30758"
+        rpy="0 0 0" />
+      <mass
+        value="267.05" />
+      <inertia
+        ixx="155.01"
+        ixy="-0.23079"
+        ixz="-7.049"
+        iyy="160.78"
+        iyz="0.044583"
+        izz="307.7" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="2.5943 -0.055035 0.74987"
+        rpy="0 0 0" />
+      <mass
+        value="1896.7" />
+      <inertia
+        ixx="718.49"
+        ixy="87.982"
+        ixz="-301.34"
+        iyy="4912.8"
+        iyz="23.826"
+        izz="4533.7" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.99 0.88 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.72143"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="1.4069 0.51583 0.00043141"
+        rpy="0 0 0" />
+      <mass
+        value="1149.7" />
+      <inertia
+        ixx="62.889"
+        ixy="-4.0888"
+        ixz="-0.60716"
+        iyy="575.38"
+        iyz="0.16274"
+        izz="629.63" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.99 0.88 0 1"  />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0.78 -0.07 0.548"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+     <limit
+      lower="-0.1719"
+      upper="1.1526"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.64616 0.054458 1.9617E-05"
+        rpy="0 0 0" />
+      <mass
+        value="308.3" />
+      <inertia
+        ixx="1.9786"
+        ixy="3.3846"
+        ixz="0.0039077"
+        iyy="62.708"
+        iyz="0.00032934"
+        izz="63.701" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.99 0.88 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="3 0 -0.0005"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+   <limit
+      lower="-2.5265"
+      upper="-0.5544"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0.22788 0.1819 0.02514"
+        rpy="0 0 0" />
+      <mass
+        value="136.04" />
+      <inertia
+        ixx="8.3836"
+        ixy="-0.63526"
+        ixz="-0.39851"
+        iyy="17.276"
+        iyz="0.19387"
+        izz="14.026" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.88 0.87 0.86 2.55" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator_description/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="1.55 0 -0.0005"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+     <limit
+      lower="-2.4107"
+      upper="0.578"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link
+    name="tip_link" />
+
+  <joint
+    name="tip_joint"
+    type="fixed">
+    <origin
+      xyz="0.89258 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link4" />
+    <child
+      link="tip_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
